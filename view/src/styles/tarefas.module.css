@@ -1,0 +1,12 @@
+.tarefas{
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.tarefas .titulo{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}

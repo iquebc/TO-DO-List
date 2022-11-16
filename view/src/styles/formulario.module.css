@@ -1,0 +1,23 @@
+.formulario{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario .subtitulo{
+    font-size: 1.5rem;
+}
+
+.formGroup{
+    margin-right: 0.5rem;
+}
+
+.label{
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
