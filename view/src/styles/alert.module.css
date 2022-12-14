@@ -1,0 +1,16 @@
+.alertContainer{
+    width: 100%;
+    position: absolute;
+    top:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.alertBody{
+    width: 30%;
+    background-color: rgba(255, 0, 0, 0.683);
+    border-radius: 5px;
+    padding: 20px;
+}

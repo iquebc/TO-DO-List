@@ -1,0 +1,22 @@
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-bottom: 1rem;
+}
+
+.label{
+    margin-bottom: 0.35rem;
+    font-weight: 500;
+}
+
+.input{
+    border: 1px solid #ccc;
+    padding: 0.4rem;
+    color: rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
+}
+
+.input:focus{
+    outline: 1px solid cornflowerblue;
+}

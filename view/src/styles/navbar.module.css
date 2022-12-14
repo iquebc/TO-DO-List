@@ -1,0 +1,13 @@
+.navbar {
+    flex-grow: 0;
+}
+
+.navLinks {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.link {
+    padding: 0px 20px;
+}

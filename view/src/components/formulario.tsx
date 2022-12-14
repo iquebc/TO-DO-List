@@ -1,37 +1,25 @@
-import { useState } from "react";
+import { BaseSyntheticEvent } from "react";
 import styles from "../styles/formulario.module.css";
-import { Tarefa } from "../model/tarefa";
 
 interface FormularioProps {
-  onSubmit: (tarefa: Tarefa) => void;
+  onSubmit: (e:BaseSyntheticEvent) => void;
+  children?: any;
+  titulo: string;
 }
 
 export default function Formulario(props: FormularioProps) {
-  const [tarefa, setTarefa] = useState("");
-
+  
   function handleSubmit(e: React.BaseSyntheticEvent) {
     e.preventDefault();
-    const novaTarefa = Tarefa.novaTarefaPendente(1, tarefa);
-    props.onSubmit(novaTarefa);
+    props.onSubmit(e);
   }
 
   return (
-    <div className={styles.formulario}>
-      <h2 className={styles.subtitulo}>Adicionar Tarefa</h2>
-      <form onSubmit={handleSubmit} style={{ display: "flex" }}>
-        <div className={styles.formGroup}>
-          <label className={styles.label} htmlFor="txtTarefa">
-            Tarefa:
-          </label>
-          <input
-            type="text"
-            id="txtTarefa"
-            value={tarefa}
-            onChange={(e) => setTarefa(e.target.value)}
-          />
-        </div>
-        <button type="submit">Incluir Tarefa</button>
-      </form>
-    </div>
+    <form className={styles.formLogin} onSubmit={handleSubmit}>
+      <h1 style={{ fontSize: "2rem", color: "cornflowerblue" }}>
+        {props.titulo}
+      </h1>
+      {props.children}
+    </form>
   );
 }
