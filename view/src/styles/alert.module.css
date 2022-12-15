@@ -1,16 +1,73 @@
-.alertContainer{
+.alertContainer {
     width: 100%;
     position: absolute;
-    top:0;
+    top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px;
+    padding: 10px;
 }
 
-.alertBody{
-    width: 30%;
-    background-color: rgba(255, 0, 0, 0.683);
+.alertBody {
+    display: flex;
+    width: 25%;
     border-radius: 5px;
-    padding: 20px;
+    padding: 0.5rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    opacity: 0.8;
+    transition: all ease-in-out 0.3s;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.alertBody:hover {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
+    opacity: 1;
+}
+
+.success {
+    background-color: rgb(93, 187, 81);
+}
+
+.warning {
+    background-color: rgb(255, 212, 58);
+}
+
+.error {
+    background-color: rgb(255, 91, 91);
+}
+
+.info {
+    background-color: rgb(65, 182, 255);
+}
+
+.alertIcon {
+    margin-right: 1rem;
+}
+
+.messageContainer {
+    flex-grow: 1;
+}
+
+.title {
+    font-size: 1.1rem;
+    padding: 0;
+    margin: 0.5rem 0;
+    font-weight: 600;
+}
+
+.message {
+    font-size: 0.9rem;
+    padding: 0;
+    margin: 0.5rem 0;
+    font-weight: 400;
+    width: 100%;
+    word-wrap: break-word;
+}
+
+.closeButton {
+    border: none;
+    background-color: transparent;
+    padding: 0.5rem;
+    cursor: pointer;
 }

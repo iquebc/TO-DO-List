@@ -1,17 +1,4 @@
-import { useState } from "react";
+import { useContext } from "react";
+import AlertContext from "../context/AlertContext";
 
-export const useMessage = () => {
-  const [message, setMessage] = useState("");
-
-  function showAlert(message: string) {
-    console.log('Mensagem Nova');
-    setMessage(message);
-    setTimeout(() => {
-      setMessage("");
-    }, 5000);
-  }
-
-  return [message, showAlert] as const;
-};
-
-
+export const useAlert = () => useContext(AlertContext);

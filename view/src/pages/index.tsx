@@ -1,10 +1,9 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
-import Alert from "../components/alert";
 import Button from "../components/button";
 import Formulario from "../components/formulario";
 import Input from "../components/input";
-import { useMessage } from "../data/hook/useAlert";
+import { useAlert } from "../data/hook/useAlert";
 import useUser from "../data/hook/useUser";
 import userList from "../data/mock/userList";
 import UserModel from "../model/user";
@@ -14,16 +13,16 @@ export default function Index() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [loading, setLoading] = useState(false);
-  const [message, showAlert] = useMessage();
   const userContext = useUser();
+  const { showInfoAlert, showErrorAlert, showSuccessAlert, showWarningAlert } =
+    useAlert();
   const route = useRouter();
 
   function handleSubmit(e) {
     setLoading(true);
     const user = authUser(email, senha);
     if (!user) {
-      showAlert("Usuário ou Senha Inválido");
-      console.log("Usuário ou Senha Inválido");
+      showErrorAlert("Usuário ou Senha Inválido");
       setLoading(false);
       return;
     }
@@ -36,13 +35,11 @@ export default function Index() {
 
   function authUser(email: string, senha: string): UserModel | undefined {
     const user = userList.find((x) => x.email === email && x.senha === senha);
-    console.log(user);
     return user;
   }
 
   return (
     <div className={styles.login}>
-      <Alert></Alert>
       <Formulario onSubmit={(e) => handleSubmit(e)} titulo="Login">
         <Input
           id="txtEmail"
@@ -66,7 +63,7 @@ export default function Index() {
           id="btnSalvar"
           type="primary"
           label="Salvar"
-          onClick={() => console.log("cliquei")}
+          onClick={() => {}}
           isLoading={loading}
         ></Button>
       </Formulario>

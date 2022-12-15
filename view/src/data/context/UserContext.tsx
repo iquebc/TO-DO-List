@@ -3,7 +3,7 @@ import UserModel from "../../model/user";
 
 interface UserContextProps {
   usuario?: UserModel;
-  setUser: (user: UserModel) => void;
+  setUser?: (user: UserModel) => void;
 }
 
 const UserContext = createContext<UserContextProps>({});
