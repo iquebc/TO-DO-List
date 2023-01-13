@@ -9,7 +9,6 @@ interface LayoutProps {
 }
 
 export default function Layout(props: LayoutProps) {
-  const usuario = new UserModel("Henrique");
   return (
     <>
       <header className={styles.header}>

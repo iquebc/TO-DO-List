@@ -14,8 +14,7 @@ export default function Index() {
   const [senha, setSenha] = useState("");
   const [loading, setLoading] = useState(false);
   const userContext = useUser();
-  const { showInfoAlert, showErrorAlert, showSuccessAlert, showWarningAlert } =
-    useAlert();
+  const { showErrorAlert } = useAlert();
   const route = useRouter();
 
   function handleSubmit(e) {

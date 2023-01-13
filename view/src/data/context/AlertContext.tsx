@@ -19,12 +19,15 @@ export function AlertProvider(props) {
   function showSuccessAlert(message: string) {
     setAlert(AlertModel.successMessage("Sucesso!", message));
   }
+  
   function showErrorAlert(message: string) {
     setAlert(AlertModel.errorMessage("Erro!", message));
   }
+
   function showWarningAlert(message: string) {
     setAlert(AlertModel.warningMessage("Atenção!", message));
   }
+
   function showInfoAlert(message: string) {
     setAlert(AlertModel.infoMessage("OK!", message));
   }
